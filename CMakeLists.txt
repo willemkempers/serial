@@ -6,6 +6,8 @@ cmake_policy(SET CMP0048 NEW)
 
 project(serial VERSION 1.2.1)
 
+# Set include dir
+set(SERIAL_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/include)
 
 ## Options 
 
@@ -76,7 +78,8 @@ else()
 endif()
 
 ## Include headers
-target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>)
+# target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>)
+target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${SERIAL_INCLUDE_DIR}>)
 
 
 ## Example
